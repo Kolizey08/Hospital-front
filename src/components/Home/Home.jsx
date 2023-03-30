@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Home.module.scss";
-import Services from '../Services/Services'
 import doc from '../../assets/img/doctor.png'
 import kreslo from '../../assets/img/Vector.png'
 import mesto from '../../assets/img/Group.png'
@@ -31,7 +30,6 @@ function Home() {
         <div className={styles.divIcons2}> <div> <img src={kreslo} alt="" /></div> <div className={styles.iconsText}>3 стоматологических <p>кабинета</p> </div> </div>
         <div className={styles.divIcons3}> <div> <img src={mesto} alt="" /></div> <div className={styles.iconsText}>Удобное <p>расположение</p>  </div></div>
       </div>
-      <Services />
     </div>
   );
 }
