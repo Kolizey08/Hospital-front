@@ -1,0 +1,40 @@
+.confidence {
+  .confidence_wrapper {
+    padding: 124px 130px;
+    background-color: #fbfbfb;
+    .confidence_bText {
+      font-weight: 700;
+      font-size: 48px;
+      color: #272727;
+      margin-bottom: 60px;
+    }
+    .confidence_row {
+      display: flex;
+      justify-content: space-between;
+      .confidence_column {
+        padding: 58px 37px;
+        background-color: #ffffff;
+        border-radius: 4px;
+        .column_number {
+          font-weight: 400;
+          font-size: 38px;
+          color: #38bcea;
+          margin-bottom: 7px;
+        }
+        .column_bText {
+          font-weight: 700;
+          font-size: 26px;
+          max-width: 300px;
+          color: #222222;
+          margin-bottom: 7px;
+        }
+        .column_sText {
+          font-weight: 400;
+          font-size: 20px;
+          color: #292929;
+          max-width: 320px;
+        }
+      }
+    }
+  }
+}
