@@ -1,4 +1,5 @@
 import React from "react";
+import BannerFeedback from "../components/BannerFeedback/BannerFeedback";
 import Confidence from "../components/Confidence/Confidence";
 import Home from "../components/Home/Home";
 import Services from "../components/Services/Services";
@@ -12,6 +13,7 @@ const Main = () => {
         <Home />
         <Services />
         <Confidence />
+        <BannerFeedback />
       </div>
     </div>
   );
