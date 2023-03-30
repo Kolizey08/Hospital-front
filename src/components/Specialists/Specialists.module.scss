@@ -1,0 +1,71 @@
+.specialists {
+  .specialists_wrapper {
+    padding: 96px 130px;
+    .specialists_bText {
+      font-weight: 700;
+      font-size: 48px;
+      color: #12354b;
+      margin-bottom: 14px;
+    }
+    .specialists_sText {
+      font-weight: 400;
+      font-size: 24px;
+      color: #737373;
+      margin-bottom: 55px;
+      max-width: 500px;
+    }
+    .specialists_row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      row-gap: 35px;
+      .specialist {
+        background: linear-gradient(255.02deg, #f7f8fa -0.59%, #eff0f4 100%);
+        box-shadow: 0px 13px 50px rgba(192, 192, 192, 0.2);
+        border-radius: 4px;
+        max-width: 610px;
+        width: 100%;
+        position: relative;
+        height: 300px;
+        .specialist_row {
+          display: flex;
+          justify-content: space-between;
+          .specialist_info {
+            padding: 40px 0 0 40px;
+            z-index: 1;
+            .specialist_name {
+              font-weight: 700;
+              font-size: 34px;
+              color: #363636;
+              max-width: 280px;
+              margin-bottom: 14px;
+            }
+            .specialist_job {
+              font-weight: 400;
+              font-size: 20px;
+              color: #3e3e3e;
+              margin-bottom: 11px;
+            }
+            .specialist_experience {
+              font-weight: 400;
+              font-size: 20px;
+              color: #3e3e3e;
+            }
+          }
+          .specialist_image {
+            position: absolute;
+            z-index: 0;
+            right: 0;
+            bottom: 0;
+            img {
+              max-width: 220px;
+            }
+            .sPhoto {
+              max-width: 340px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@ import logo3 from "../../assets/img/bus.png";
 
 function Trealment() {
   return (
-    <div>
+    <div className={styles.divCointener}>
       <div className={styles.divTextTitle}>
         <div className={styles.text1}>Лечение у нас</div>
         <div className={styles.text2}>
