@@ -3,6 +3,7 @@ import BannerFeedback from "../components/BannerFeedback/BannerFeedback";
 import Confidence from "../components/Confidence/Confidence";
 import Home from "../components/Home/Home";
 import Services from "../components/Services/Services";
+import Specialists from "../components/Specialists/Specialists";
 
 import styles from "./Main.module.scss";
 
@@ -14,6 +15,7 @@ const Main = () => {
         <Services />
         <Confidence />
         <BannerFeedback />
+        <Specialists />
       </div>
     </div>
   );
