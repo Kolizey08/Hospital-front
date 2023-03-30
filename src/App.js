@@ -1,12 +1,11 @@
+import './App.css';
 import "./App.css";
-import Confidence from "./components/Confidence/Confidence";
-import Services from "./components/Services/Services";
+import Main from './pages/Main';
 
 function App() {
   return (
     <div className="App">
-      <Services />
-      <Confidence />
+      <Main />
     </div>
   );
 }
