@@ -6,6 +6,7 @@ import pacient from "../../assets/img/pacient.png";
 import logo1 from "../../assets/img/voxel.png";
 import logo2 from "../../assets/img/log.png";
 import logo3 from "../../assets/img/bus.png";
+import logo from '../../assets/img/logotip.png'
 
 function Trealment() {
   return (
@@ -19,7 +20,7 @@ function Trealment() {
       </div>
       <div className={styles.divCointener2}>
         <div className={styles.divTextBlock}>
-          <div className={styles.text3}> (Наш Логотип) клиника</div>
+          <div className={styles.text3}> <img src={logo} alt="" /> <span>клиника </span></div>
           <div className={styles.text4}>
             предоставляет весь спектр
             <p>стоматологических услуг таких как : </p>

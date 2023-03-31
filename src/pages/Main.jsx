@@ -7,6 +7,8 @@ import Trealment from "../components/Trealment/Trealment";
 import Specialists from "../components/Specialists/Specialists";
 
 import styles from "./Main.module.scss";
+import WindowFeedback from "../components/WindowFeedback/WindowFeedback";
+import Futer from "../components/Futer/Futer";
 
 const Main = () => {
   return (
@@ -18,6 +20,8 @@ const Main = () => {
         <BannerFeedback />
         <Trealment />
         <Specialists />
+        <WindowFeedback />
+        <Futer />
       </div>
     </div>
   );
