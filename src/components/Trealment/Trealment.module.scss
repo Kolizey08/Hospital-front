@@ -50,6 +50,11 @@ font-size: 20px;
 line-height: 23px;
 color: #1A3444;
 margin-bottom: 30px;
+display: flex;
+align-items: center;
+span {
+    margin-left: 15px;
+}
 }
 
 .text4 {
