@@ -1,9 +1,21 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./Services.module.scss";
 import serviceArrow from "../../assets/img/serviceArrow.svg";
+import { fetchCategories } from "../../redux/slices/categorySlice";
+import { fetchService, } from "../../redux/slices/serviceSlice";
 
 const Services = () => {
+  const dispatch = useDispatch();
+  const categories = useSelector((state) => state.category.categories);
+  const service = useSelector((state) => state.service.service);
+
+  React.useEffect(() => {
+    dispatch(fetchService());
+    dispatch(fetchCategories());
+  }, [dispatch]);
+  
   return (
     <div className={styles.services}>
       <div className={styles.services_wrapper}>
@@ -30,11 +42,14 @@ const Services = () => {
           {service.map((item) => {
             return (
               <div className={styles.services_choice}>
-              <div className={styles.choice_text}>{item.name}</div>
-              <div className={styles.choice_price}>{item.price}₽</div>
-              <div className={styles.choice_button}> <button>Записаться</button> </div>
+                <div className={styles.choice_text}>{item.name}</div>
+                <div className={styles.choice_price}>{item.price}₽</div>
+                <div className={styles.choice_button}>
+                  {" "}
+                  <button>Записаться</button>{" "}
+                </div>
               </div>
-            )
+            );
           })}
         </div>
         <div className={styles.services_row} id={styles.services_row2}>
