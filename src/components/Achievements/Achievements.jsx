@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Pagination } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/scss/pagination";
@@ -16,9 +16,12 @@ const Achievements = () => {
           Сертификаты, награды и дипломы
         </div>
         <Swiper
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
           slidesPerView={3}
           pagination={{ clickable: true }}
+          // autoplay={{
+          //   delay: 3000
+          // }}
           centeredSlides={false}
         >
           <SwiperSlide><img src={achievement} alt="" /></SwiperSlide>

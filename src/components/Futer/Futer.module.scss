@@ -1,0 +1,33 @@
+.divFuter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 150px;
+    background: #F2F3F5;
+}
+
+.divImg {
+    width: 260px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.divText1 {
+    font-family: 'Arial';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 145.49%;
+text-align: center;
+color: #000000;
+}
+
+.divText2 {
+    font-family: 'Arial';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 145.49%;
+text-decoration-line: underline;
+color: #000000;
+}
