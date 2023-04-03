@@ -1,0 +1,31 @@
+.achievements {
+  .achievements_wrapper {
+    img {
+      max-width: 400px;
+    }
+    margin-bottom: 220px;
+    .achievements_bText {
+      margin: 0 0 92px 130px;
+      font-weight: 700;
+      font-size: 48px;
+      color: #12354b;
+    }
+    :global {
+      .swiper {
+        max-width: 1230px;
+        height: 320px;
+        .swiper-wrapper {
+          box-sizing: border-box;
+        }
+        &-pagination {
+          bottom: 0;
+          &-bullet {
+            margin: 0 6px;
+            width: 11px;
+            height: 11px;
+          }
+        }
+      }
+    }
+  }
+}
