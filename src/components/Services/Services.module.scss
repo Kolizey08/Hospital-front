@@ -28,11 +28,6 @@
           transition: padding 0.5s ease;
           background: #38bcea;
           box-shadow: 0px 20px 50px rgba(165, 165, 165, 0.2);
-          svg {
-            path {
-              fill: #ffffff;
-            }
-          }
           .service_text {
             color: #ffffff;
             margin-bottom: 32px;
@@ -53,11 +48,10 @@
       .service_img {
         margin-bottom: 30px;
         height: 78px;
-        svg {
-          path {
-            fill: #38bcea;
-          }
-        }
+        margin: 0 auto;
+        background-position: center;
+        width: 100%;
+        background-repeat: no-repeat;
       }
       .service_text {
         font-weight: 700;
@@ -75,6 +69,57 @@
       &:last-child {
         max-width: 744px;
         margin: auto;
+      }
+      .services_service:hover {
+        .service_img {
+          img {
+            display: none;
+          }
+        }
+      }
+    }
+    #services_row1 {
+      .services_service:nth-child(1):hover {
+        .service_img {
+          background-image: url("../../assets/img/dentalTreatmentWhite.svg");
+        }
+      }
+      .services_service:nth-child(2):hover {
+        .service_img {
+          background-image: url("../../assets/img/hygieneWhite.svg");
+        }
+      }
+      .services_service:nth-child(3):hover {
+        .service_img {
+          background-image: url("../../assets/img/bracesWhite.svg");
+        }
+      }
+      .services_service:nth-child(4):hover {
+        .service_img {
+          background-image: url("../../assets/img/childDentWhite.svg");
+        }
+      }
+      .services_service:nth-child(5):hover {
+        .service_img {
+          background-image: url("../../assets/img/implantsWhite.svg");
+        }
+      }
+    }
+    #services_row2 {
+      .services_service:nth-child(1):hover {
+        .service_img {
+          background-image: url("../../assets/img/veneersWhite.svg");
+        }
+      }
+      .services_service:nth-child(2):hover {
+        .service_img {
+          background-image: url("../../assets/img/crownsWhite.svg");
+        }
+      }
+      .services_service:nth-child(3):hover {
+        .service_img {
+          background-image: url("../../assets/img/surgeryWhite.svg");
+        }
       }
     }
     .services_choices {
