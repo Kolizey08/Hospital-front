@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import styles from "./Services.module.scss";
 import serviceArrow from "../../assets/img/serviceArrow.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchService, } from "../../redux/slices/serviceSlice";
 
 const Services = () => {
+  const dispatch = useDispatch();
+  const service = useSelector((state) => state.service.service);
+
+  useEffect(() => {
+    dispatch(fetchService());
+  }, [dispatch]);
+
   return (
     <div className={styles.services}>
       <div className={styles.services_wrapper}>
@@ -318,34 +327,15 @@ const Services = () => {
           </div>
         </div>
         <div className={styles.services_choices}>
-          <div className={styles.services_choice}>
-            <div className={styles.choice_text}>Световая пломба</div>
-            <div className={styles.choice_price}>3 800 ₽</div>
-            <div className={styles.choice_button}>
-              <button>Записаться</button>
-            </div>
-          </div>
-          <div className={styles.services_choice}>
-            <div className={styles.choice_text}>Лечение кариеса</div>
-            <div className={styles.choice_price}>3 800 ₽</div>
-            <div className={styles.choice_button}>
-              <button>Записаться</button>
-            </div>
-          </div>
-          <div className={styles.services_choice}>
-            <div className={styles.choice_text}>Лечение пульпита</div>
-            <div className={styles.choice_price}>6 000 ₽</div>
-            <div className={styles.choice_button}>
-              <button>Записаться</button>
-            </div>
-          </div>
-          <div className={styles.services_choice}>
-            <div className={styles.choice_text}>Лечение кисты</div>
-            <div className={styles.choice_price}>4 450 ₽</div>
-            <div className={styles.choice_button}>
-              <button>Записаться</button>
-            </div>
-          </div>
+          {service.map((item) => {
+            return (
+              <div className={styles.services_choice}>
+              <div className={styles.choice_text}>{item.name}</div>
+              <div className={styles.choice_price}>{item.price}₽</div>
+              <div className={styles.choice_button}> <button>Записаться</button> </div>
+              </div>
+            )
+          })}
         </div>
         <div className={styles.services_row}>
           <div className={styles.services_service}>
