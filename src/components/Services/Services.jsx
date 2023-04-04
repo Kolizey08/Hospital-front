@@ -3,23 +3,42 @@ import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./Services.module.scss";
 import serviceArrow from "../../assets/img/serviceArrow.svg";
+import bracesWhite from "../../assets/img/bracesWhite.svg";
+import childDentWhite from "../../assets/img/childDentWhite.svg";
+import crownsWhite from "../../assets/img/crownsWhite.svg";
+import dentalTreatmentWhite from "../../assets/img/dentalTreatmentWhite.svg";
+import hygieneWhite from "../../assets/img/hygieneWhite.svg";
+import implantsWhite from "../../assets/img/implantsWhite.svg";
+import surgeryWhite from "../../assets/img/surgeryWhite.svg";
+import veneersWhite from "../../assets/img/veneersWhite.svg";
 import { fetchCategories } from "../../redux/slices/categorySlice";
 import { fetchService } from "../../redux/slices/serviceSlice";
+
+const images = [
+  dentalTreatmentWhite,
+  hygieneWhite,
+  bracesWhite,
+  childDentWhite,
+  implantsWhite,
+  veneersWhite,
+  crownsWhite,
+  surgeryWhite,
+];
 
 const Services = () => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.category.categories);
   const service = useSelector((state) => state.service.service);
-  const [choice, setChoice] = useState('')
+  const [choice, setChoice] = useState("");
 
   React.useEffect(() => {
     dispatch(fetchService());
     dispatch(fetchCategories());
   }, [dispatch]);
-  
+
   const handleSetChoice = (id) => {
-    setChoice(id)
-  }
+    setChoice(id);
+  };
 
   return (
     <div className={styles.services}>
@@ -29,11 +48,32 @@ const Services = () => {
           Мы постарались сделать прайс, максимально простым и понятным.
         </div>
         <div className={styles.services_row} id={styles.services_row1}>
-          {categories.slice(0, 5).map((category) => {
+          {categories.slice(0, 5).map((category, index) => {
+            const neededImage = category.image
+              .replace("Blue", "White")
+              .slice(0, category.image.length - 3);
+            const findedImage = images[index].slice(
+              14,
+              images[index].indexOf(".", 2)
+            );
             return (
-              <div className={styles.services_service} key={category._id} onClick={() => handleSetChoice(category._id)}>
+              <div
+                className={styles.services_service}
+                id={choice === category._id ? `${styles.active}` : null}
+                key={category._id}
+                onClick={() => handleSetChoice(category._id)}
+              >
                 <div className={styles.service_img}>
-                  <img src={`http://localhost:4000/${category.image}`} alt="" />
+                  {choice === category._id ? (
+                    <img
+                      src={neededImage === findedImage ? images[index] : null}
+                    />
+                  ) : (
+                    <img
+                      src={`http://localhost:4000/${category.image}`}
+                      alt=""
+                    />
+                  )}
                 </div>
                 <div className={styles.service_text}>{category.name}</div>
                 <div className={styles.service_hoverArrow}>
@@ -44,25 +84,51 @@ const Services = () => {
           })}
         </div>
         <div className={styles.services_choices}>
-          {choice && service.filter((item) => item.category._id === choice).map((item) => {
-            return (
-              <div className={styles.services_choice} key={item._id}>
-                <div className={styles.choice_text}>{item.name}</div>
-                <div className={styles.choice_price}>{item.price}₽</div>
-                <div className={styles.choice_button}>
-                  {" "}
-                  <button>Записаться</button>{" "}
-                </div>
-              </div>
-            );
-          })}
+          {choice &&
+            service
+              .filter((item) => item.category._id === choice)
+              .map((item) => {
+                return (
+                  <div className={styles.services_choice} key={item._id}>
+                    <div className={styles.choice_text}>{item.name}</div>
+                    <div className={styles.choice_price}>{item.price}₽</div>
+                    <div className={styles.choice_button}>
+                      {" "}
+                      <button>Записаться</button>{" "}
+                    </div>
+                  </div>
+                );
+              })}
         </div>
         <div className={styles.services_row} id={styles.services_row2}>
-          {categories.slice(5).map((category) => {
+          {categories.slice(5).map((category, index) => {
+            const neededImage = category.image
+              .replace("Blue", "White")
+              .slice(0, category.image.length - 3);
+            const findedImage = images[index + 5].slice(
+              14,
+              images[index + 5].indexOf(".", 2)
+            );
             return (
-              <div className={styles.services_service} key={category._id} onClick={() => handleSetChoice(category._id)}>
+              <div
+                className={styles.services_service}
+                key={category._id}
+                id={choice === category._id ? `${styles.active}` : ""}
+                onClick={() => handleSetChoice(category._id)}
+              >
                 <div className={styles.service_img}>
-                  <img src={`http://localhost:4000/${category.image}`} alt="" />
+                  {choice === category._id ? (
+                    <img
+                      src={
+                        neededImage === findedImage ? images[index + 5] : null
+                      }
+                    />
+                  ) : (
+                    <img
+                      src={`http://localhost:4000/${category.image}`}
+                      alt=""
+                    />
+                  )}
                 </div>
                 <div className={styles.service_text}>{category.name}</div>
                 <div className={styles.service_hoverArrow}>

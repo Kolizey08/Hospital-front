@@ -45,6 +45,19 @@
         padding-top: 40px;
         cursor: pointer;
       }
+      #active {
+        padding-top: 30px;
+        transition: padding 0.5s ease;
+        background: #38bcea;
+        box-shadow: 0px 20px 50px rgba(165, 165, 165, 0.2);
+        .service_text {
+          color: #ffffff;
+          margin-bottom: 32px;
+        }
+        .service_hoverArrow {
+          opacity: 1;
+        }
+      }
       .service_img {
         margin-bottom: 30px;
         height: 78px;
