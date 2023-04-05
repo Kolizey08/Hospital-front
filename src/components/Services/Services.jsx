@@ -29,7 +29,8 @@ const Services = () => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.category.categories);
   const service = useSelector((state) => state.service.service);
-  const [choice, setChoice] = useState("");
+  const [choice, setChoice] = useState('')
+  
 
   React.useEffect(() => {
     dispatch(fetchService());
@@ -37,8 +38,13 @@ const Services = () => {
   }, [dispatch]);
 
   const handleSetChoice = (id) => {
-    setChoice(id);
-  };
+    setChoice(id)
+
+    if(choice) {
+      setChoice(null)
+    }
+  }
+
 
   return (
     <div className={styles.services}>
