@@ -10,11 +10,13 @@ import Specialists from "../components/Specialists/Specialists";
 import styles from "./Main.module.scss";
 import WindowFeedback from "../components/WindowFeedback/WindowFeedback";
 import Futer from "../components/Futer/Futer";
+import Header from "../components/Header/Header";
 
 const Main = () => {
   return (
     <div className={styles.main}>
       <div className={styles.main_wrapper}>
+        <Header />
         <Home />
         <Services />
         <Confidence />
