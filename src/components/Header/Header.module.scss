@@ -12,30 +12,30 @@
   .seti {
   display: flex;
 justify-content: space-evenly;
-width: 13%;
+width: 12%;
   }
 
   .imggoogle {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
 
   .imginsta {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
 
   .imginvis {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
 
 
   .vkladki {
     display: flex;
     justify-content: space-around;
-    width: 29%;
-    font-size: 19px;
+    width: 37%;
+    font-size: 18px;
     padding-right: 29px;
   }
 
@@ -66,10 +66,10 @@ width: 13%;
  
   .marsh {
   display: flex;
-  justify-content: space-between;
-  width: 10%;
+  justify-content: space-around;
+  width: 14%;
   align-items: center;
-  
+  font-size: 15px;
   }
 
   .imgmarsh {
@@ -80,8 +80,14 @@ width: 13%;
   .raspis {
   display: flex;
   justify-content: space-around;
-  width: 10%;
+  width: 13%;
   align-items: center;
+  font-size: 15px;
+  }
+
+  .calen {
+    width: 15px;
+    height: 17px;
   }
 
   .dni {
@@ -91,14 +97,12 @@ width: 13%;
   .telefon {
   display: flex;
   justify-content: space-evenly;
-  width: 8%;
+  width: 10%;
+  font-size: 15px;
   }
 
-  .zvonok {
-  width: 166px;
-  height: 36px;
-  color: white;
-  background-color: #38BCEA;
-  border: 0;
-  border-radius: 3px;
+  .voyti {
+  width: 30px;
+  height: 30px;
+ 
   }
