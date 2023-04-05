@@ -1,0 +1,38 @@
+.registration {
+    .registration_wrapper {
+      padding-top: 150px;
+      .registration_form {
+        max-width: 350px;
+        margin: auto;
+        text-align: center;
+        .registration_bText {
+          font-size: 24px;
+          margin-bottom: 30px;
+        }
+        input {
+          padding: 10px;
+          font-size: 17px;
+          margin-bottom: 30px;
+          width: 330px;
+        }
+        .registrationButton {
+          button {
+            padding: 10px 15px;
+            font-size: 17px;
+            border: none;
+            background: #38bcea;
+            border-radius: 5px;
+            color: #ffffff;
+            cursor: pointer;
+          }
+        }
+        .hasAccauntText {
+          border-bottom: 1px solid #000;
+          max-width: 160px;
+          margin: 25px auto;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  

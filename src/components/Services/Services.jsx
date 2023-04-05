@@ -11,7 +11,7 @@ const Services = () => {
   const categories = useSelector((state) => state.category.categories);
   const service = useSelector((state) => state.service.service);
   const [choice, setChoice] = useState('')
-
+  
   React.useEffect(() => {
     dispatch(fetchService());
     dispatch(fetchCategories());
@@ -19,6 +19,10 @@ const Services = () => {
   
   const handleSetChoice = (id) => {
     setChoice(id)
+
+    if(choice) {
+      setChoice(null)
+    }
   }
 
   return (
