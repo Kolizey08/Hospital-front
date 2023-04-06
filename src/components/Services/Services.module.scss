@@ -164,6 +164,29 @@
             cursor: pointer;
           }
         }
+        .picker_row {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          .picker_close {
+            color: red;
+            font-size: 22px;
+            padding: 9px;
+            cursor: pointer;
+            height: 40px;
+          }
+        }
+        :global {
+          .react-datepicker__input-container {
+            input {
+              padding: 5px;
+              width: 210px;
+            }
+          }
+          .react-datepicker__time-list-item--disabled {
+            display: none;
+          }
+        }
       }
     }
   }
