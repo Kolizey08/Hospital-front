@@ -1,70 +1,66 @@
 .windowFeedback {
-    background: linear-gradient(84.27deg, #e6f2ff 0%, #faf1ed 100%);
-    margin-top: 130px;
-    .windowFeedback_wrapper {
-      position: relative;
-      padding: 62px 140px;
-      .column_bText {
-        max-width: 890px;
-        font-weight: 700;
-        font-size: 36px;
-        color: #000000;
-        margin-bottom: 40px;
+  background: linear-gradient(84.27deg, #e6f2ff 0%, #faf1ed 100%);
+  margin-top: 130px;
+  .windowFeedback_wrapper {
+    position: relative;
+    padding: 62px 140px;
+    .column_bText {
+      max-width: 890px;
+      font-family: "PantonBold";
+      font-size: 36px;
+      color: #000000;
+      margin-bottom: 40px;
+    }
+    .column_sText {
+      max-width: 555px;
+      font-size: 22px;
+      color: #262626;
+      margin-bottom: 38px;
+      span {
+        color: #0079ff;
       }
-      .column_sText {
-        max-width: 555px;
-        font-weight: 400;
-        font-size: 22px;
-        color: #262626;
-        margin-bottom: 38px;
-        span {
-          color: #0079ff;
-        }
-      }
-      .feedbackForm_row {
-        display: flex;
-        gap: 20px;
-        margin-bottom: 32px;
-        .feedback_input {
-          input {
-            padding: 14px 22px;
-            font-weight: 400;
-            font-size: 22px;
-            &::placeholder {
-              color: #bbbbbb;
-            }
-          }
-        }
-        .feedback_button {
-          button {
-            border: none;
-            background: #38bcea;
-            border-radius: 5px;
-            padding: 15px 37px;
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 22px;
-            cursor: pointer;
+    }
+    .feedbackForm_row {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 32px;
+      .feedback_input {
+        input {
+          padding: 14px 22px;
+          font-size: 22px;
+          &::placeholder {
+            color: #bbbbbb;
           }
         }
       }
-      .column_warningText {
-        max-width: 450px;
-        font-weight: 400;
-        font-size: 18px;
-        color: #4e4e4e;
-        span {
-          border-bottom: 1px solid #4e4e4e;
-        }
-      }
-      .windowPhoto {
-        position: absolute;
-        top: -117px;
-        right: 0;
-        img {
-          max-width: 670px;
+      .feedback_button {
+        button {
+          border: none;
+          background: #38bcea;
+          border-radius: 5px;
+          padding: 15px 37px;
+          color: #ffffff;
+          font-family: "ArialBold";
+          font-size: 22px;
+          cursor: pointer;
         }
       }
     }
+    .column_warningText {
+      max-width: 470px;
+      font-size: 18px;
+      color: #4e4e4e;
+      span {
+        border-bottom: 1px solid #4e4e4e;
+      }
+    }
+    .windowPhoto {
+      position: absolute;
+      top: -117px;
+      right: 0;
+      img {
+        max-width: 670px;
+      }
+    }
   }
-  
+}

@@ -3,7 +3,7 @@
     padding: 124px 130px;
     background-color: #fbfbfb;
     .confidence_bText {
-      font-weight: 700;
+      font-family: 'PantonBold';
       font-size: 48px;
       color: #272727;
       margin-bottom: 60px;
@@ -16,23 +16,22 @@
         background-color: #ffffff;
         border-radius: 4px;
         .column_number {
-          font-weight: 400;
+          font-family: 'PantonRegular';
           font-size: 38px;
           color: #38bcea;
           margin-bottom: 7px;
         }
         .column_bText {
-          font-weight: 700;
-          font-size: 26px;
+          font-family: 'PantonBold';
+          font-size: 25px;
           max-width: 300px;
           color: #222222;
           margin-bottom: 7px;
         }
         .column_sText {
-          font-weight: 400;
-          font-size: 20px;
+          font-size: 19px;
           color: #292929;
-          max-width: 320px;
+          max-width: 340px;
         }
       }
     }
