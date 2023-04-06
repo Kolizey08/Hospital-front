@@ -2,17 +2,16 @@
   .specialists_wrapper {
     padding: 96px 130px;
     .specialists_bText {
-      font-weight: 700;
+      font-family: 'PantonBold';
       font-size: 48px;
       color: #12354b;
       margin-bottom: 14px;
     }
     .specialists_sText {
-      font-weight: 400;
       font-size: 24px;
       color: #737373;
       margin-bottom: 55px;
-      max-width: 500px;
+      max-width: 550px;
     }
     .specialists_row {
       display: flex;
@@ -34,10 +33,10 @@
             padding: 40px 0 0 40px;
             z-index: 1;
             .specialist_name {
-              font-weight: 700;
+              font-family: 'PantonBold';
               font-size: 34px;
               color: #363636;
-              max-width: 280px;
+              max-width: 320px;
               margin-bottom: 14px;
             }
             .specialist_job {

@@ -6,6 +6,7 @@
         margin: auto;
         text-align: center;
         .registration_bText {
+          font-family: 'PantonBold';
           font-size: 24px;
           margin-bottom: 30px;
         }
@@ -31,6 +32,10 @@
           max-width: 160px;
           margin: 25px auto;
           cursor: pointer;
+          a {
+            text-decoration: none;
+            color: #000;
+          }
         }
       }
     }

@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     padding: 20px;
     background-color: #fff;
@@ -11,98 +11,98 @@
   
   .seti {
   display: flex;
-justify-content: space-evenly;
-width: 12%;
-  }
+  justify-content: space-evenly;
+  width: 12%;
+}
 
-  .imggoogle {
-    width: 25px;
-    height: 25px;
-  }
+.imggoogle {
+  width: 25px;
+  height: 25px;
+}
 
-  .imginsta {
-    width: 25px;
-    height: 25px;
-  }
+.imginsta {
+  width: 25px;
+  height: 25px;
+}
 
-  .imginvis {
-    width: 25px;
-    height: 25px;
-  }
+.imginvis {
+  width: 25px;
+  height: 25px;
+}
 
+.vkladki {
+  display: flex;
+  justify-content: space-around;
+  width: 37%;
+  font-size: 18px;
+  padding-right: 29px;
+  font-family: "Roboto", sans-serif;
+}
 
-  .vkladki {
-    display: flex;
-    justify-content: space-around;
-    width: 37%;
-    font-size: 18px;
-    padding-right: 29px;
-  }
+.onas {
+  text-decoration: none;
+  color: #01678a;
+}
 
-  .onas {
-    text-decoration: none;
-    color: #01678A;
-  }
+.uslugi {
+  text-decoration: none;
+  color: #aaaaaa;
+}
 
-  .uslugi {
-    text-decoration: none;
-    color: #AAAAAA;
-  }
+.spec {
+  text-decoration: none;
+  color: #aaaaaa;
+}
 
-  .spec {
-    text-decoration: none;
-    color: #AAAAAA;
-  }
+.pacient {
+  text-decoration: none;
+  color: #aaaaaa;
+}
 
-  .pacient {
-    text-decoration: none;
-    color: #AAAAAA;
-  }
+.contacts {
+  text-decoration: none;
+  color: #aaaaaa;
+}
 
-  .contacts {
-    text-decoration: none;
-    color: #AAAAAA;
-  }
- 
-  .marsh {
+.marsh {
   display: flex;
   justify-content: space-around;
   width: 14%;
   align-items: center;
   font-size: 15px;
-  }
+}
 
-  .imgmarsh {
+.imgmarsh {
   width: 15px;
   height: 20px;
-  }
+}
 
-  .raspis {
+.raspis {
   display: flex;
   justify-content: space-around;
   width: 13%;
   align-items: center;
   font-size: 15px;
-  }
+}
 
-  .calen {
-    width: 15px;
-    height: 17px;
-  }
+.calen {
+  width: 15px;
+  height: 17px;
+}
 
-  .dni {
-    color: #909090;
-  }
+.dni {
+  color: #909090;
+}
 
-  .telefon {
+.telefon {
   display: flex;
   justify-content: space-evenly;
   width: 10%;
   font-size: 15px;
-  }
+}
 
   .voyti {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
  
   }
