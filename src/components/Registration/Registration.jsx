@@ -1,31 +1,29 @@
-import React, { useState } from 'react'
-import styles from './Registration.module.scss'
-import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { registration } from '../../redux/slices/userSlice'
+import React, { useState } from "react";
+import styles from "./Registration.module.scss";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { registration } from "../../redux/slices/userSlice";
 
 function Registration() {
+  const dispatch = useDispatch();
+  const [username, setUsername] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
 
-    const dispatch = useDispatch()
-    const [username, setUsername] = useState('')
-    const [phone, setPhone] = useState('')
-    const [password, setPassword] = useState('')
+  const handleRegistration = () => {
+    dispatch(registration({ username, phone, password }));
+    setUsername("");
+    setPhone("");
+    setPassword("");
+  };
 
-
-    const handleRegistration = () => {
-        dispatch(registration({ username, phone, password }));
-        setUsername('');
-        setPhone('')
-        setPassword('');
-      };
-
-      const handleDisabled = () => {
-        if(!username || !phone || !password) {
-            return true
-        } else {
-            return false
-        }
-      }
+  const handleDisabled = () => {
+    if (!username || !phone || !password) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   return (
     <div className={styles.registration}>
@@ -57,7 +55,11 @@ function Registration() {
             />
           </div>
           <div className={styles.registrationButton}>
-            <button onClick={handleRegistration} disabled={handleDisabled()}>Зарегистрироваться</button>
+            <Link to={'/authorization'}>
+            <button onClick={handleRegistration} disabled={handleDisabled()}>
+              Зарегистрироваться
+            </button>
+            </Link>
           </div>
           <div className={styles.hasAccauntText}>
             <Link to={"/authorization"}>У меня есть аккаунт</Link>
@@ -65,7 +67,7 @@ function Registration() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Registration
+export default Registration;
