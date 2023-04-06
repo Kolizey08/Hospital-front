@@ -1,32 +1,47 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    service: []
-}
+  service: [],
+  serviceById: null,
+};
 
 export const fetchService = createAsyncThunk(
-    'fetch/service',
+  "fetch/service",
   async (_, thunkAPI) => {
     try {
-        const service = await fetch('http://localhost:4000/usluga')
-        return service.json()
+      const service = await fetch("http://localhost:4000/usluga");
+      return service.json();
     } catch (error) {
-        return thunkAPI.rejectWithValue(error)
+      return thunkAPI.rejectWithValue(error);
     }
   }
-    
-)
+);
+
+export const getServiceById = createAsyncThunk(
+  "getById/service",
+  async (id, thunkAPI) => {
+    try {
+      const serviceById = await fetch(`http://localhost:4000/usluga/${id}`);
+      return serviceById.json();
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err);
+    }
+  }
+);
 
 export const servicegaSlice = createSlice({
-    name: 'service',
-    initialState,
-    reducers: {},
-    extraReducers: (biulder) => {
-        biulder
-        .addCase(fetchService.fulfilled, (state, action) => {
-            state.service = action.payload
-        })
-    }
-})
+  name: "service",
+  initialState,
+  reducers: {},
+  extraReducers: (biulder) => {
+    biulder
+      .addCase(fetchService.fulfilled, (state, action) => {
+        state.service = action.payload;
+      })
+      .addCase(getServiceById.fulfilled, (state, action) => {
+        state.serviceById = action.payload;
+      });
+  },
+});
 
-export default servicegaSlice.reducer
+export default servicegaSlice.reducer;

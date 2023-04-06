@@ -13,6 +13,8 @@ import surgeryWhite from "../../assets/img/surgeryWhite.svg";
 import veneersWhite from "../../assets/img/veneersWhite.svg";
 import { fetchCategories } from "../../redux/slices/categorySlice";
 import { fetchService } from "../../redux/slices/serviceSlice";
+import ServicesChoice from "./ServicesChoice";
+import { fetchSpecialists } from "../../redux/slices/specialistSlice";
 
 const images = [
   dentalTreatmentWhite,
@@ -29,11 +31,12 @@ const Services = () => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.category.categories);
   const service = useSelector((state) => state.service.service);
-  const [choice, setChoice] = useState('')
-  
+  const specialists = useSelector((state) => state.specialist.specialists);
+  const [choice, setChoice] = useState("");
 
   React.useEffect(() => {
     dispatch(fetchService());
+    dispatch(fetchSpecialists());
     dispatch(fetchCategories());
   }, [dispatch]);
 
@@ -95,14 +98,11 @@ const Services = () => {
               .filter((item) => item.category._id === choice)
               .map((item) => {
                 return (
-                  <div className={styles.services_choice} key={item._id}>
-                    <div className={styles.choice_text}>{item.name}</div>
-                    <div className={styles.choice_price}>{item.price}₽</div>
-                    <div className={styles.choice_button}>
-                      {" "}
-                      <button>Записаться</button>{" "}
-                    </div>
-                  </div>
+                  <ServicesChoice
+                    item={item}
+                    key={item._id}
+                    specialists={specialists}
+                  />
                 );
               })}
         </div>
