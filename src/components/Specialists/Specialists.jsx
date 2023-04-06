@@ -28,10 +28,12 @@ const Specialists = () => {
                   <div className={styles.specialist_row}>
                     <div className={styles.specialist_info}>
                       <div className={styles.specialist_name}>
-                        {specialist.firstName} {specialist.lastName}{" "}
+                      {specialist.lastName} {specialist.firstName}{" "}
                         {specialist.surname}
                       </div>
-                      <div className={styles.specialist_job}>{specialist.speciality?.speciality}</div>
+                      <div className={styles.specialist_job}>
+                        {specialist.speciality?.speciality}
+                      </div>
                       {specialist.experience && (
                         <div className={styles.specialist_experience}>
                           Стаж работы {specialist.experience} лет{" "}
