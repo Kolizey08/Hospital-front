@@ -41,8 +41,13 @@ const Services = () => {
   }, [dispatch]);
 
   const handleSetChoice = (id) => {
-    setChoice(id);
-  };
+    setChoice(id)
+
+    if(choice) {
+      setChoice(null)
+    }
+  }
+
 
   return (
     <div className={styles.services}>
