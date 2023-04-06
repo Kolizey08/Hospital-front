@@ -1,9 +1,6 @@
 import React from "react";
 import styles from "./Header.module.scss";
 import logo from "../../assets/img/logotip.png";
-import google from "../../assets/img/google.png";
-import instagram from "../../assets/img/instagram.png";
-import invision from "../../assets/img/invision.png";
 import marshrut from "../../assets/img/marshrut.png";
 import calendar from "../../assets/img/calendar.png";
 import logophone from "../../assets/img/phone.png";
@@ -11,28 +8,32 @@ import vhod from "../../assets/img/vhod.png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+
+const hadleScroller = (px) => {
+window.scrollTo(0, px)
+}
+
   return (
     <div className={styles.header}>
       <div className={styles.logo}>
         <img src={logo} alt="" />
       </div>
-      
       <div className={styles.vkladki}>
-        <a className={styles.onas} href="">
+        <p className={styles.onas} onClick={() => hadleScroller(0)}>
           О нас
-        </a>
-        <a className={styles.uslugi} href="">
+        </p>
+        <p className={styles.uslugi} onClick={() => hadleScroller(800)}>
           Услуги
-        </a>
-        <a className={styles.spec} href="">
+        </p>
+        <p className={styles.spec} onClick={() => hadleScroller(4050)}>
           Специалисты
-        </a>
-        <a className={styles.pacient} href="">
+        </p>
+        <p className={styles.pacient} onClick={() => hadleScroller(3100)}>
           Пациентам
-        </a>
-        <a className={styles.contacts} href="">
+        </p>
+        <p className={styles.contacts} onClick={() => hadleScroller(6300)}>
           Контакты
-        </a>
+        </p>
       </div>
       <div className={styles.marsh}>
         <img className={styles.imgmarsh} src={marshrut} alt="" />

@@ -88,15 +88,15 @@ export const userSlice = createSlice({
     biulder
       .addCase(fetchUsers.fulfilled, (state, action) => {
         state.users = action.payload;
-        state.token = localStorage.getItem("token");
       })
       .addCase(registration.fulfilled, (state, action) => {
         state.users.push(action.payload);
         state.registeredUser = action.payload;
       })
       .addCase(authorization.fulfilled, (state, action) => {
-        localStorage.setItem("token", action.payload.token);
-        state.token = action.payload.token;
+        localStorage.setItem("token", action.payload);
+        console.log(action.payload);
+        state.token = action.payload;
       });
   },
 });
