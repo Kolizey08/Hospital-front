@@ -22,7 +22,7 @@ function Home() {
           </span>
         </div>
         <div>
-          <button className={styles.btn}>Записаться на прием</button>
+          <button className={styles.btn} onClick={() => window.scrollTo(0, 740)}>Записаться на прием</button>
         </div>
       </div>
       <div className={styles.divCointenerIconsText}>

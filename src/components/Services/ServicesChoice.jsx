@@ -31,7 +31,7 @@ const ServicesChoice = ({ item, specialists }) => {
     );
     return (
       selectedDate.getHours() > 8 &&
-      selectedDate.getHours() < 19 &&
+      selectedDate.getHours() < 20 &&
       !disabledTimes?.includes(
         selectedDate
           .toISOString()
@@ -63,6 +63,11 @@ const ServicesChoice = ({ item, specialists }) => {
       setOpenDatePicker(true);
     }
   };
+
+  const isWeekday = (date) => {
+    const day = date.getDay();
+    return day !== 0;
+  };
   return (
     <div className={styles.services_choice} key={item._id}>
       <div className={styles.choice_text}>{item.name}</div>
@@ -92,6 +97,7 @@ const ServicesChoice = ({ item, specialists }) => {
             timeCaption="Время"
             timeIntervals={30}
             filterTime={filterPassedTime}
+            filterDate={isWeekday}
             minDate={new Date()}
             withPortal
             dateFormat={"dd-MM-yyyy HH:mm"}
