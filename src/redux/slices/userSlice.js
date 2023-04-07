@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { async } from "q";
 
 const initialState = {
   users: [],
