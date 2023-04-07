@@ -10,7 +10,11 @@ import { Link } from "react-router-dom";
 const Header = () => {
 
 const hadleScroller = (px) => {
-window.scrollTo(0, px)
+window.scrollTo({
+  top: px,
+  behavior: "smooth"
+})
+
 }
 
   return (
@@ -31,7 +35,7 @@ window.scrollTo(0, px)
         <p className={styles.pacient} onClick={() => hadleScroller(3100)}>
           Пациентам
         </p>
-        <p className={styles.contacts} onClick={() => hadleScroller(6300)}>
+        <p className={styles.contacts} onClick={() => hadleScroller(6600)}>
           Контакты
         </p>
       </div>
