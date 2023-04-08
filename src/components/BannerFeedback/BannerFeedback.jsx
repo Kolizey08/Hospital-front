@@ -19,7 +19,7 @@ const BannerFeedback = () => {
             <input type="text" placeholder="Телефон" />
           </div>
           <div className={styles.feedback_button}>
-            <button>Записаться на прием</button>
+            <button>Заказать звонок</button>
           </div>
         </div>
         <div className={styles.column_warningText}>

@@ -42,26 +42,26 @@ const ServicesChoice = ({ item, specialists }) => {
     );
   };
 
-  const handleOpenPicker = (usluga, user, id) => {
-    if (openDatePicker) {
-      const date = startDate
-        .toLocaleString("ru", {
-          month: "numeric",
-          day: "numeric",
-          year: "numeric",
-          hour: "numeric",
-          minute: "numeric",
-        })
-        .replace(",", "")
-        .replace(".", "-")
-        .replace(".", "-");
-      dispatch(recordToSpecialist({ date, usluga, user, id }));
-      setOpenDatePicker(false);
-      setStartDate("");
-    } else {
-      dispatch(getServiceById(usluga));
-      setOpenDatePicker(true);
-    }
+  const handleOpenPicker = (usluga) => {
+    setOpenDatePicker(true);
+    dispatch(getServiceById(usluga));
+  };
+
+  const handleRecord = (usluga, user, id) => {
+    const date = startDate
+      .toLocaleString("ru", {
+        month: "numeric",
+        day: "numeric",
+        year: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+      })
+      .replace(",", "")
+      .replace(".", "-")
+      .replace(".", "-");
+    dispatch(recordToSpecialist({ date, usluga, user, id }));
+    setOpenDatePicker(false);
+    setStartDate("");
   };
 
   const isWeekday = (date) => {
@@ -73,21 +73,10 @@ const ServicesChoice = ({ item, specialists }) => {
       <div className={styles.choice_text}>{item.name}</div>
       <div className={styles.choice_price}>{item.price}₽</div>
       <div className={styles.choice_button}>
-        {" "}
-        <button
-          onClick={() =>
-            handleOpenPicker(
-              item._id,
-              "642d28eefbbb0572c257f92f",
-              item.doctor._id
-            )
-          }
-        >
-          Записаться
-        </button>{" "}
+        <button onClick={() => handleOpenPicker(item._id)}>Записаться</button>
       </div>
       {openDatePicker && (
-        <div className={styles.picker_row}>
+        <div className={styles.datePicker}>
           <DatePicker
             placeholderText="Выберите дату и время записи"
             selected={startDate}
@@ -99,15 +88,24 @@ const ServicesChoice = ({ item, specialists }) => {
             filterTime={filterPassedTime}
             filterDate={isWeekday}
             minDate={new Date()}
-            withPortal
+            inline
             dateFormat={"dd-MM-yyyy HH:mm"}
-          />
-          <div
-            className={styles.picker_close}
-            onClick={() => setOpenDatePicker(!openDatePicker)}
           >
-            x
-          </div>
+            <div className={styles.choice_button} style={{ marginLeft: 20 }}>
+              <button
+                onClick={() =>
+                  handleRecord(
+                    item._id,
+                    "642d28eefbbb0572c257f92f",
+                    item.doctor._id
+                  )
+                }
+                disabled={!startDate || startDate?.toString()[17] === "0"}
+              >
+                Записаться
+              </button>
+            </div>
+          </DatePicker>
         </div>
       )}
     </div>

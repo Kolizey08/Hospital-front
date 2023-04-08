@@ -4,8 +4,13 @@ import doc from '../../assets/img/doctor.png'
 import kreslo from '../../assets/img/Vector.png'
 import mesto from '../../assets/img/Group.png'
 
-
 function Home() {
+  const handleScroll = () => {
+    window.scrollTo({
+      top: 740,
+      behavior: 'smooth'
+    })
+  }
   return (
     <div className={styles.divCointener}>
       <div className={styles.divCointenerText}>
@@ -22,7 +27,7 @@ function Home() {
           </span>
         </div>
         <div>
-          <button className={styles.btn} onClick={() => window.scrollTo(0, 740)}>Записаться на прием</button>
+          <button className={styles.btn} onClick={handleScroll}>Записаться на прием</button>
         </div>
       </div>
       <div className={styles.divCointenerIconsText}>

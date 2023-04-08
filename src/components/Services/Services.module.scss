@@ -163,6 +163,19 @@
             cursor: pointer;
           }
         }
+        .datePicker {
+          position: fixed;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          z-index: 2;
+          background-color: rgba(0, 0, 0, 0.25);
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
         .picker_row {
           display: flex;
           align-items: center;
@@ -176,11 +189,8 @@
           }
         }
         :global {
-          .react-datepicker__input-container {
-            input {
-              padding: 5px;
-              width: 210px;
-            }
+          .react-datepicker__month-container {
+            margin-bottom: 5px;
           }
           .react-datepicker__time-list-item--disabled {
             display: none;
