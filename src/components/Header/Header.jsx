@@ -29,7 +29,7 @@ window.scrollTo({
         <p className={styles.uslugi} onClick={() => hadleScroller(800)}>
           Услуги
         </p>
-        <p className={styles.spec} onClick={() => hadleScroller(4050)}>
+        <p className={styles.spec} onClick={() => hadleScroller(3920)}>
           Специалисты
         </p>
         <p className={styles.pacient} onClick={() => hadleScroller(3100)}>
