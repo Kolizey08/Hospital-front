@@ -12,7 +12,7 @@ import implantsWhite from "../../assets/img/implantsWhite.svg";
 import surgeryWhite from "../../assets/img/surgeryWhite.svg";
 import veneersWhite from "../../assets/img/veneersWhite.svg";
 import { fetchCategories } from "../../redux/slices/categorySlice";
-import { fetchService } from "../../redux/slices/serviceSlice";
+import { fetchService, setOpentChoiceForm } from "../../redux/slices/serviceSlice";
 import ServicesChoice from "./ServicesChoice";
 import { fetchSpecialists } from "../../redux/slices/specialistSlice";
 
@@ -43,8 +43,9 @@ const Services = () => {
 
   const handleSetChoice = (id) => {
     setChoice(id);
-
-    if (choice) {
+    dispatch(setOpentChoiceForm(true))
+    if (choice === id) {
+      dispatch(setOpentChoiceForm(false))
       setChoice(null);
     }
   };

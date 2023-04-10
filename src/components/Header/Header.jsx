@@ -6,20 +6,23 @@ import calendar from "../../assets/img/calendar.png";
 import logophone from "../../assets/img/phone.png";
 import vhod from "../../assets/img/vhod.png";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const isChoiceOpen = useSelector((state) => state.service.serviceChoiceOpen);
 
-const hadleScroller = (px) => {
-window.scrollTo({
-  top: px,
-  behavior: "smooth"
-})
+  const hadleScroller = (px) => {
+    window.scrollTo({
+      top: px,
+      behavior: "smooth",
+    });
+  };
 
-}
-
-const handleOpenLocation = () => {
-  window.open('https://www.google.com/maps/place/Intocode+Coding+Bootcamp+%E2%80%93+%D1%88%D0%BA%D0%BE%D0%BB%D0%B0+%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F/@43.3243786,45.693057,18z/data=!4m6!3m5!1s0x4051d13abc103637:0x8601f7fff1cac51f!8m2!3d43.3248451!4d45.6923891!16s%2Fg%2F11h2gd700k');
-}
+  const handleOpenLocation = () => {
+    window.open(
+      "https://www.google.com/maps/place/%D0%A6%D0%B5%D0%BD%D1%82%D1%80+%D1%81%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9+%D0%B8%D0%BC%D0%BF%D0%BB%D0%B0%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8+%22%D0%91%D0%95%D0%A0%D0%A1%22/@43.3240432,45.6923724,17z/data=!3m1!4b1!4m6!3m5!1s0x4051d1c7b609b85b:0x53e32b9caaeaa563!8m2!3d43.3240432!4d45.6945611!16s%2Fg%2F11f50x4f66"
+    );
+  };
 
   return (
     <div className={styles.header}>
@@ -30,16 +33,16 @@ const handleOpenLocation = () => {
         <p className={styles.onas} onClick={() => hadleScroller(0)}>
           О нас
         </p>
-        <p className={styles.uslugi} onClick={() => hadleScroller(800)}>
+        <p className={styles.uslugi} onClick={() => hadleScroller(700)}>
           Услуги
         </p>
-        <p className={styles.spec} onClick={() => hadleScroller(3920)}>
+        <p className={styles.spec} onClick={() => hadleScroller(isChoiceOpen ? 4230 : 3920)}>
           Специалисты
         </p>
-        <p className={styles.pacient} onClick={() => hadleScroller(3100)}>
+        <p className={styles.pacient} onClick={() => hadleScroller(isChoiceOpen ? 3320 : 3020)}>
           Пациентам
         </p>
-        <p className={styles.contacts} onClick={() => hadleScroller(6600)}>
+        <p className={styles.contacts} onClick={() => hadleScroller(isChoiceOpen ? 6800 : 6500)}>
           Контакты
         </p>
       </div>
@@ -47,7 +50,7 @@ const handleOpenLocation = () => {
         <img className={styles.imgmarsh} src={marshrut} alt="" />
         <div className={styles.adres}>
           Грозный, <br />
-          Шейха-Али Митаева 1
+          Шейха-Али Митаева 31А
         </div>
       </div>
       <div className={styles.raspis}>
@@ -63,11 +66,11 @@ const handleOpenLocation = () => {
         </div>
         <div className={styles.phone}>+7900 333 10 40</div>
       </div>
-      <Link to={'/authorization'} >
-       <img className={styles.voyti} src={vhod} alt="" />
+      <Link to={"/authorization"}>
+        <img className={styles.voyti} src={vhod} alt="" />
       </Link>
     </div>
   );
-}
+};
 
 export default Header;
