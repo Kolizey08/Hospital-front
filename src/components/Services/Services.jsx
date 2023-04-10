@@ -32,6 +32,7 @@ const Services = () => {
   const categories = useSelector((state) => state.category.categories);
   const service = useSelector((state) => state.service.service);
   const specialists = useSelector((state) => state.specialist.specialists);
+  const token = useSelector((state) => state.user.token);
   const [choice, setChoice] = useState("");
 
   React.useEffect(() => {
@@ -41,13 +42,12 @@ const Services = () => {
   }, [dispatch]);
 
   const handleSetChoice = (id) => {
-    setChoice(id)
+    setChoice(id);
 
-    if(choice) {
-      setChoice(null)
+    if (choice) {
+      setChoice(null);
     }
-  }
-
+  };
 
   return (
     <div className={styles.services}>
@@ -102,6 +102,7 @@ const Services = () => {
                     item={item}
                     key={item._id}
                     specialists={specialists}
+                    token={token}
                   />
                 );
               })}

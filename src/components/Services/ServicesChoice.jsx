@@ -8,12 +8,16 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import styles from "./Services.module.scss";
 import { recordToSpecialist } from "../../redux/slices/specialistSlice";
-import { getServiceById } from "../../redux/slices/serviceSlice";
+import {
+  getServiceById,
+  setOpenSeviceMessage,
+} from "../../redux/slices/serviceSlice";
 
-const ServicesChoice = ({ item, specialists }) => {
+const ServicesChoice = ({ item, specialists, token }) => {
   const dispatch = useDispatch();
   const [startDate, setStartDate] = React.useState();
   const [openDatePicker, setOpenDatePicker] = React.useState(false);
+  const openMessage = useSelector((state) => state.service.serviceMessage);
   const serviceById = useSelector((state) => state.service.serviceById);
 
   const filterPassedTime = (time) => {
@@ -47,6 +51,14 @@ const ServicesChoice = ({ item, specialists }) => {
     dispatch(getServiceById(usluga));
   };
 
+  const handleMessageOpen = () => {
+    if (!openMessage) {
+      dispatch(setOpenSeviceMessage(true));
+      setTimeout(() => {
+        dispatch(setOpenSeviceMessage(false));
+      }, 2950);
+    }
+  };
   const handleRecord = (usluga, user, id) => {
     const date = startDate
       .toLocaleString("ru", {
@@ -70,10 +82,22 @@ const ServicesChoice = ({ item, specialists }) => {
   };
   return (
     <div className={styles.services_choice} key={item._id}>
+      {openMessage && (
+        <div className={styles.messageForm}>
+          <div className={styles.messageText}>
+            Для онлайн записи нужно авторизоваться!
+          </div>
+          <div className={styles.message_timeLine}></div>
+        </div>
+      )}
       <div className={styles.choice_text}>{item.name}</div>
       <div className={styles.choice_price}>{item.price}₽</div>
       <div className={styles.choice_button}>
-        <button onClick={() => handleOpenPicker(item._id)}>Записаться</button>
+        {token ? (
+          <button onClick={() => handleOpenPicker(item._id)}>Записаться</button>
+        ) : (
+          <button onClick={() => handleMessageOpen()}>Записаться</button>
+        )}
       </div>
       {openDatePicker && (
         <div className={styles.datePicker}>
@@ -100,7 +124,7 @@ const ServicesChoice = ({ item, specialists }) => {
                     item.doctor._id
                   )
                 }
-                disabled={!startDate || startDate?.toString()[17] === "0"}
+                disabled={!startDate || startDate?.toString()[16] === "0"}
               >
                 Записаться
               </button>
