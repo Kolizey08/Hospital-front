@@ -3,6 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   service: [],
   serviceById: null,
+  serviceMessage: null,
 };
 
 export const fetchService = createAsyncThunk(
@@ -29,6 +30,13 @@ export const getServiceById = createAsyncThunk(
   }
 );
 
+export const setOpenSeviceMessage = createAsyncThunk(
+  "OpenMessage/service",
+  async (bool, thunkAPI) => {
+    return bool;
+  }
+);
+
 export const servicegaSlice = createSlice({
   name: "service",
   initialState,
@@ -40,6 +48,9 @@ export const servicegaSlice = createSlice({
       })
       .addCase(getServiceById.fulfilled, (state, action) => {
         state.serviceById = action.payload;
+      })
+      .addCase(setOpenSeviceMessage.fulfilled, (state, action) => {
+        state.serviceMessage = action.payload;
       });
   },
 });
