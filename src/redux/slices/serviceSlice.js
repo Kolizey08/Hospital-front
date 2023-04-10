@@ -4,6 +4,7 @@ const initialState = {
   service: [],
   serviceById: null,
   serviceMessage: null,
+  serviceChoiceOpen: false,
 };
 
 export const fetchService = createAsyncThunk(
@@ -31,7 +32,14 @@ export const getServiceById = createAsyncThunk(
 );
 
 export const setOpenSeviceMessage = createAsyncThunk(
-  "OpenMessage/service",
+  "openMessage/service",
+  async (bool, thunkAPI) => {
+    return bool;
+  }
+);
+
+export const setOpentChoiceForm = createAsyncThunk(
+  "openChoice/service",
   async (bool, thunkAPI) => {
     return bool;
   }
@@ -51,6 +59,9 @@ export const servicegaSlice = createSlice({
       })
       .addCase(setOpenSeviceMessage.fulfilled, (state, action) => {
         state.serviceMessage = action.payload;
+      })
+      .addCase(setOpentChoiceForm.fulfilled, (state, action) => {
+        state.serviceChoiceOpen = action.payload;
       });
   },
 });

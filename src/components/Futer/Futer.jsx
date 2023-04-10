@@ -13,7 +13,7 @@ function Futer() {
            <a href=""><img src={instagram} alt="" /> </a> 
             <a href=""><img src={invision} alt="" /> </a> 
         </div>
-        <div className={styles.divText1}> ООО «Дент», лицензия №ЛО-86-8681-01868686047 от 13.02.2009 <p>© 2018-2021 </p> </div>
+        <div className={styles.divText1}> ООО «Дент», лицензия №ЛО-86-8681-01868686047 от 13.02.2009 <p>© 2018-2023 </p> </div>
         <div className={styles.divText2}> Политика в отношении обработки <p>персональных данных </p> </div>
         <div> <img src={logo} alt="" /></div>
     </div>
