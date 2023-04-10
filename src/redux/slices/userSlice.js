@@ -94,7 +94,6 @@ export const userSlice = createSlice({
       })
       .addCase(authorization.fulfilled, (state, action) => {
         localStorage.setItem("token", action.payload);
-        console.log(action.payload);
         state.token = action.payload;
       });
   },
