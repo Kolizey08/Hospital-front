@@ -4,6 +4,8 @@ import styles from "./BannerFeedback.module.scss";
 import bannerPhoto from "../../assets/img/feedbackBanner.png";
 
 const BannerFeedback = () => {
+  const [pnoheNumber, setPhoneNumber] = React.useState('')
+
   return (
     <div className={styles.bannerFeedback}>
       <div className={styles.bannerFeedback_wrapper}>
@@ -16,10 +18,10 @@ const BannerFeedback = () => {
         </div>
         <div className={styles.feedbackForm_row}>
           <div className={styles.feedback_input}>
-            <input type="text" placeholder="Телефон" />
+            <input type="text" placeholder="Телефон" value={pnoheNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
           </div>
           <div className={styles.feedback_button}>
-            <button>Заказать звонок</button>
+            <button onClick={() => setPhoneNumber('')}>Заказать звонок</button>
           </div>
         </div>
         <div className={styles.column_warningText}>
