@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     padding: 17px;
     background-color: #fff;
@@ -36,6 +36,36 @@
   font-size: 18px;
   padding-right: 29px;
   font-family: "Roboto", sans-serif;
+}
+
+.onas {
+  text-decoration: none;
+  color: #01678a;
+  cursor: pointer;
+}
+
+.uslugi {
+  text-decoration: none;
+  color: #aaaaaa;
+  cursor: pointer;
+}
+
+.spec {
+  text-decoration: none;
+  color: #aaaaaa;
+  cursor: pointer;
+}
+
+.pacient {
+  text-decoration: none;
+  color: #aaaaaa;
+  cursor: pointer;
+}
+
+.contacts {
+  text-decoration: none;
+  color: #aaaaaa;
+  cursor: pointer;
   p {
     cursor: pointer;
     color: #aaaaaa;
@@ -84,7 +114,7 @@
 }
 
   .voyti {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
  
   }
