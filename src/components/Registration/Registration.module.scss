@@ -1,19 +1,25 @@
 .registration {
+    background-image: url(https://phonoteka.org/uploads/posts/2022-09/1663956204_1-phonoteka-org-p-oboi-dlya-stomatologov-instagram-2.jpg);
+    background-size: 100% 100%;
+    height: 47vw;
     .registration_wrapper {
-      padding-top: 150px;
+      padding-top: 130px;
       .registration_form {
-        max-width: 350px;
+        max-width: 400px;
         margin: auto;
         text-align: center;
+        background: #9e9e9e5e;
+    height: 480px;
+    padding-top: 35px;
         .registration_bText {
           font-family: 'PantonBold';
           font-size: 24px;
-          margin-bottom: 30px;
+          margin-bottom: 50px;
         }
         input {
           padding: 10px;
           font-size: 17px;
-          margin-bottom: 30px;
+          margin-bottom: 40px;
           width: 330px;
         }
         .registrationButton {
@@ -30,7 +36,7 @@
         .hasAccauntText {
           border-bottom: 1px solid #000;
           max-width: 160px;
-          margin: 25px auto;
+          margin: 30px auto;
           cursor: pointer;
           a {
             text-decoration: none;

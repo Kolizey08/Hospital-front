@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     padding: 20px;
     background-color: #fff;
@@ -42,26 +42,31 @@
 .onas {
   text-decoration: none;
   color: #01678a;
+  cursor: pointer;
 }
 
 .uslugi {
   text-decoration: none;
   color: #aaaaaa;
+  cursor: pointer;
 }
 
 .spec {
   text-decoration: none;
   color: #aaaaaa;
+  cursor: pointer;
 }
 
 .pacient {
   text-decoration: none;
   color: #aaaaaa;
+  cursor: pointer;
 }
 
 .contacts {
   text-decoration: none;
   color: #aaaaaa;
+  cursor: pointer;
 }
 
 .marsh {
@@ -102,7 +107,7 @@
 }
 
   .voyti {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
  
   }
