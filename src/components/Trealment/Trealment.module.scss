@@ -4,17 +4,14 @@
 }
 
 .divTextTitle {
-  margin-left: 150px;
+  margin-left: 130px;
   margin-bottom: 50px;
 }
 
 .divCointener2 {
   display: flex;
-  justify-content: space-around;
-}
-
-.divTextBlock {
-  margin-top: 60px;
+  justify-content: space-between;
+  padding: 0 130px;
 }
 
 .text1 {
@@ -31,7 +28,7 @@
 }
 
 .divIconsCointener {
-  display: flex;
+  display: none;
   justify-content: flex-end;
   margin-bottom: 10px;
 }

@@ -1,8 +1,8 @@
 import React from "react";
 
 import { Pagination, Autoplay } from "swiper";
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import "swiper/scss/pagination";
 
 import styles from "./Achievements.module.scss";
@@ -19,17 +19,29 @@ const Achievements = () => {
           modules={[Pagination, Autoplay]}
           slidesPerView={3}
           pagination={{ clickable: true }}
-          // autoplay={{
-          //   delay: 3000
-          // }}
+          autoplay={{
+            delay: 3000,
+          }}
           centeredSlides={false}
         >
-          <SwiperSlide><img src={achievement} alt="" /></SwiperSlide>
-          <SwiperSlide><img src={achievement} alt="" /></SwiperSlide>
-          <SwiperSlide><img src={achievement} alt="" /></SwiperSlide>
-          <SwiperSlide><img src={achievement} alt="" /></SwiperSlide>
-          <SwiperSlide><img src={achievement} alt="" /></SwiperSlide>
-          <SwiperSlide><img src={achievement} alt="" /></SwiperSlide>
+          <SwiperSlide>
+            <img src={achievement} alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={achievement} alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={achievement} alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={achievement} alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={achievement} alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={achievement} alt="" />
+          </SwiperSlide>
         </Swiper>
       </div>
     </div>

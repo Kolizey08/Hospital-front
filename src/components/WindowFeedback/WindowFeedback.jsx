@@ -18,7 +18,7 @@ function WindowFeedback() {
           <input type="text" placeholder="Телефон" />
         </div>
         <div className={styles.feedback_button}>
-          <button>Записаться на прием</button>
+          <button>Записаться на консультацию</button>
         </div>
       </div>
       <div className={styles.column_warningText}>
