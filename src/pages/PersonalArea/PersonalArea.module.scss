@@ -21,11 +21,13 @@
         &:first-child {
           background-color: rgb(196, 255, 255);
           font-size: 20px;
-          max-height: 260px;
-          .username {
-            margin-bottom: 15px;
+          max-height: 450px;
+          font-size: 18px;
+          .userInfo {
+            color: rgba($color: #000000, $alpha: 0.6);
+            font-size: 17px;
           }
-          .userPhone {
+          .info {
             margin-bottom: 15px;
           }
           .userPassword_row {
@@ -57,6 +59,10 @@
               font-size: 16px;
             }
           }
+          .changeInfo {
+            cursor: pointer;
+            margin-bottom: 15px;
+          }
           .logOut {
             cursor: pointer;
           }
@@ -68,14 +74,58 @@
           .records {
             width: 100%;
             border-collapse: collapse;
-            thead {
-            }
             tbody {
               tr {
                 border-top: 20px solid transparent;
                 margin-bottom: 20px;
               }
             }
+          }
+        }
+      }
+    }
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      text-align: left;
+
+      width: 100%;
+      background-color: rgba($color: #000000, $alpha: 0.6);
+      &_form {
+        max-width: 400px;
+        margin: 15px auto;
+        padding: 35px;
+        text-align: center;
+        background: #ffffff5e;
+        .modal_inputForm {
+          text-align: left;
+        }
+        .modal_firstLastNameRow {
+          display: flex;
+          justify-content: center;
+          gap: 30px;
+          input {
+            width: 150px;
+          }
+        }
+        input {
+          padding: 10px;
+          font-size: 17px;
+          margin-bottom: 35px;
+          width: 330px;
+        }
+        .modalButton {
+          button {
+            padding: 10px 15px;
+            font-size: 17px;
+            border: none;
+            background: #38bcea;
+            border-radius: 5px;
+            color: #ffffff;
+            cursor: pointer;
           }
         }
       }

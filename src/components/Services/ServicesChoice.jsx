@@ -126,7 +126,7 @@ const ServicesChoice = ({ item, token }) => {
                 onClick={() =>
                   handleRecord(item._id, loggedUser._id, item.doctor._id)
                 }
-                disabled={!startDate || startDate?.toString()[16] === "0"}
+                disabled={!startDate || Number(startDate?.toString()[16]) >= 9}
               >
                 Записаться
               </button>
