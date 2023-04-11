@@ -1,0 +1,84 @@
+.personalArea {
+  .personalArea_wrapper {
+    padding: 130px;
+    .personalArea_bText {
+      margin-bottom: 30px;
+      font-size: 32px;
+      font-family: "PantonBold";
+      color: #12354b;
+    }
+    .personalArea_row {
+      display: flex;
+      justify-content: space-between;
+      gap: 100px;
+      .personalArea_column {
+        border-radius: 10px;
+        padding: 30px;
+        .column_bText {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+        &:first-child {
+          background-color: rgb(196, 255, 255);
+          font-size: 20px;
+          max-height: 260px;
+          .username {
+            margin-bottom: 15px;
+          }
+          .userPhone {
+            margin-bottom: 15px;
+          }
+          .userPassword_row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 20px;
+            .userPassword_dots {
+              display: flex;
+              flex: 1;
+              align-items: center;
+              .userPassword_dot {
+                display: inline-flex;
+                &::before,
+                &::after {
+                  content: "";
+                  margin-right: 5px;
+                  width: 5px;
+                  height: 5px;
+                  border-radius: 50%;
+                  background-color: black;
+                }
+              }
+            }
+            .seePassword {
+              color: rgba($color: #000000, $alpha: 0.6);
+              cursor: pointer;
+              font-size: 16px;
+            }
+          }
+          .logOut {
+            cursor: pointer;
+          }
+        }
+        &:last-child {
+          flex: 1;
+          background-color: aquamarine;
+          padding-right: 0;
+          .records {
+            width: 100%;
+            border-collapse: collapse;
+            thead {
+            }
+            tbody {
+              tr {
+                border-top: 20px solid transparent;
+                margin-bottom: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const isChoiceOpen = useSelector((state) => state.service.serviceChoiceOpen);
+  const token = useSelector((state) => state.user.token);
 
   const hadleScroller = (px) => {
     window.scrollTo({
@@ -36,13 +37,22 @@ const Header = () => {
         <p className={styles.uslugi} onClick={() => hadleScroller(700)}>
           Услуги
         </p>
-        <p className={styles.spec} onClick={() => hadleScroller(isChoiceOpen ? 4230 : 3920)}>
+        <p
+          className={styles.spec}
+          onClick={() => hadleScroller(isChoiceOpen ? 4230 : 3920)}
+        >
           Специалисты
         </p>
-        <p className={styles.pacient} onClick={() => hadleScroller(isChoiceOpen ? 3320 : 3020)}>
+        <p
+          className={styles.pacient}
+          onClick={() => hadleScroller(isChoiceOpen ? 3320 : 3020)}
+        >
           Пациентам
         </p>
-        <p className={styles.contacts} onClick={() => hadleScroller(isChoiceOpen ? 6800 : 6500)}>
+        <p
+          className={styles.contacts}
+          onClick={() => hadleScroller(isChoiceOpen ? 6800 : 6500)}
+        >
           Контакты
         </p>
       </div>
@@ -66,9 +76,15 @@ const Header = () => {
         </div>
         <div className={styles.phone}>+7900 333 10 40</div>
       </div>
-      <Link to={"/authorization"}>
-        <img className={styles.voyti} src={vhod} alt="" />
-      </Link>
+      {token ? (
+        <Link to={"/personalArea"}>
+          <img className={styles.voyti} src={vhod} alt="" />
+        </Link>
+      ) : (
+        <Link to={"/authorization"}>
+          <img className={styles.voyti} src={vhod} alt="" />
+        </Link>
+      )}
     </div>
   );
 };
