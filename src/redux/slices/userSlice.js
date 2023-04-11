@@ -4,6 +4,7 @@ const initialState = {
   users: [],
   token: localStorage.getItem("token"),
   registeredUser: null,
+  loggedUser: null,
 };
 
 function parseJwt(token) {
@@ -79,6 +80,19 @@ export const logOut = createAsyncThunk("logOut/users", async (_, thunkAPI) => {
   localStorage.removeItem("token");
 });
 
+export const getUserById = createAsyncThunk(
+  "userById/users",
+  async (_, thunkAPI) => {
+    try {
+      const token = parseJwt(initialState.token);
+      const userByid = await fetch(`http://localhost:4000/user/${token.id}`);
+      return userByid.json();
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err);
+    }
+  }
+);
+
 export const userSlice = createSlice({
   name: "user",
   initialState,
@@ -95,6 +109,13 @@ export const userSlice = createSlice({
       .addCase(authorization.fulfilled, (state, action) => {
         localStorage.setItem("token", action.payload);
         state.token = action.payload;
+      })
+      .addCase(logOut.fulfilled, (state) => {
+        state.token = null;
+      })
+      .addCase(getUserById.fulfilled, (state, action) => {
+        state.loggedUser = action.payload;
+        state.loggedUser.password = parseJwt(state.token).password;
       });
   },
 });
