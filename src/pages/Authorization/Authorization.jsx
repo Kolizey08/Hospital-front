@@ -6,12 +6,12 @@ import { authorization } from "../../redux/slices/userSlice";
 
 function Authorization() {
   const dispatch = useDispatch();
-  const [username, setUsername] = useState("");
+  const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
 
   const handleAuthorization = () => {
-    dispatch(authorization({ username, password }));
-    setUsername("");
+    dispatch(authorization({ login, password }));
+    setLogin("");
     setPassword("");
   };
 
@@ -23,9 +23,9 @@ function Authorization() {
           <div className={styles.authorization_login}>
             <input
               type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="Введите имя пользователя"
+              value={login}
+              onChange={(e) => setLogin(e.target.value)}
+              placeholder="Введите логин"
             />
           </div>
           <div className={styles.authorization_password}>

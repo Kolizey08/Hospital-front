@@ -1,49 +1,55 @@
 .registration {
-    background-image: url(https://phonoteka.org/uploads/posts/2022-09/1663956204_1-phonoteka-org-p-oboi-dlya-stomatologov-instagram-2.jpg);
-    background-size: 100% 100%;
-    height: 47vw;
-    .registration_wrapper {
-      padding-top: 130px;
-      .registration_form {
-        max-width: 400px;
-        margin: auto;
-        text-align: center;
-        background: #9e9e9e5e;
-    height: 480px;
-    padding-top: 35px;
-        .registration_bText {
-          font-family: 'PantonBold';
-          font-size: 24px;
-          margin-bottom: 50px;
-        }
+  background-image: url("https://phonoteka.org/uploads/posts/2022-09/1663956204_1-phonoteka-org-p-oboi-dlya-stomatologov-instagram-2.jpg");
+  background-size: 100% 100%;
+  height: 47vw;
+  .registration_wrapper {
+    padding-top: 15px;
+    .registration_form {
+      max-width: 400px;
+      margin: auto;
+      padding: 35px;
+      text-align: center;
+      background: #9e9e9e5e;
+      .registration_bText {
+        font-family: "PantonBold";
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+      .registration_firstLastNameRow {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
         input {
-          padding: 10px;
+          width: 150px;
+        }
+      }
+      input {
+        padding: 10px;
+        font-size: 17px;
+        margin-bottom: 35px;
+        width: 330px;
+      }
+      .registrationButton {
+        button {
+          padding: 10px 15px;
           font-size: 17px;
-          margin-bottom: 40px;
-          width: 330px;
-        }
-        .registrationButton {
-          button {
-            padding: 10px 15px;
-            font-size: 17px;
-            border: none;
-            background: #38bcea;
-            border-radius: 5px;
-            color: #ffffff;
-            cursor: pointer;
-          }
-        }
-        .hasAccauntText {
-          border-bottom: 1px solid #000;
-          max-width: 160px;
-          margin: 30px auto;
+          border: none;
+          background: #38bcea;
+          border-radius: 5px;
+          color: #ffffff;
           cursor: pointer;
-          a {
-            text-decoration: none;
-            color: #000;
-          }
+        }
+      }
+      .hasAccauntText {
+        border-bottom: 1px solid #000;
+        max-width: 160px;
+        margin: 30px auto 0 auto;
+        cursor: pointer;
+        a {
+          text-decoration: none;
+          color: #000;
         }
       }
     }
   }
-  
+}

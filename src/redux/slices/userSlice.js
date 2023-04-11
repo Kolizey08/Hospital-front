@@ -35,15 +35,22 @@ export const fetchUsers = createAsyncThunk(
 
 export const registration = createAsyncThunk(
   "registration/users",
-  async ({ username, phone, password }, thunkAPI) => {
+  async (
+    { login, phone, password, firstname, lastname, surname, oms },
+    thunkAPI
+  ) => {
     try {
       const registration = await fetch("http://localhost:4000/registration", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          username,
+          login,
           phone,
           password,
+          firstname,
+          lastname,
+          surname,
+          oms,
         }),
       });
       return registration.json();
@@ -55,13 +62,13 @@ export const registration = createAsyncThunk(
 
 export const authorization = createAsyncThunk(
   "authorization/users",
-  async ({ username, password }, thunkAPI) => {
+  async ({ login, password }, thunkAPI) => {
     try {
       const authorization = await fetch("http://localhost:4000/authorization", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          username,
+          login,
           password,
         }),
       });
@@ -93,6 +100,33 @@ export const getUserById = createAsyncThunk(
   }
 );
 
+export const updateUser = createAsyncThunk(
+  "update/user",
+  async (
+    { id, firstname, lastname, surname, phone, password, oms, login },
+    thunkAPI
+  ) => {
+    try {
+      const updatedUser = await fetch(`http://localhost:4000/user/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstname,
+          lastname,
+          surname,
+          phone,
+          password,
+          oms,
+          login,
+        }),
+      });
+      return updatedUser.json();
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err);
+    }
+  }
+);
+
 export const userSlice = createSlice({
   name: "user",
   initialState,
@@ -109,6 +143,15 @@ export const userSlice = createSlice({
       .addCase(authorization.fulfilled, (state, action) => {
         localStorage.setItem("token", action.payload);
         state.token = action.payload;
+      })
+      .addCase(updateUser.fulfilled, (state, action) => {
+        state.loggedUser = action.payload;
+        state.users = state.users.map((user) => {
+          if (user._id === action.payload._id) {
+            user = action.payload;
+          }
+          return user;
+        });
       })
       .addCase(logOut.fulfilled, (state) => {
         state.token = null;
