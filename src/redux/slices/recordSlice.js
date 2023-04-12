@@ -37,6 +37,27 @@ export const recordToSpecialist = createAsyncThunk(
   }
 );
 
+export const changeRecordStatus = createAsyncThunk(
+  "cancel/record",
+  async ({ id, status }, thunkAPI) => {
+    try {
+      const changedRecord = await fetch(
+        `http://localhost:4000/record/change/${id}`,
+        {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            status,
+          }),
+        }
+      );
+      return changedRecord.json();
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err);
+    }
+  }
+);
+
 export const recordSlice = createSlice({
   name: "records",
   initialState,
@@ -48,6 +69,14 @@ export const recordSlice = createSlice({
       })
       .addCase(recordToSpecialist.fulfilled, (state, action) => {
         state.records.push(action.payload);
+      })
+      .addCase(changeRecordStatus.fulfilled, (state, action) => {
+        state.records = state.records.map((record) => {
+          if (record._id === action.payload._id) {
+            record.status = action.payload.status;
+          }
+          return record;
+        });
       });
   },
 });

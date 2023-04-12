@@ -49,6 +49,9 @@
         transition: padding 0.5s ease;
         background: #38bcea;
         box-shadow: 0px 20px 50px rgba(165, 165, 165, 0.2);
+        &:hover {
+          padding-top: 20px;
+        }
         .service_text {
           color: #ffffff;
           margin-bottom: 32px;
@@ -118,6 +121,9 @@
       }
     }
     #services_row2 {
+      .services_service {
+        height: 275px;
+      }
       .services_service:nth-child(1):hover {
         .service_img {
           background-image: url("../../assets/img/veneersWhite.svg");

@@ -29,24 +29,20 @@ const ServicesChoice = ({ item, token }) => {
     dispatch(fetchRecords());
     dispatch(getUserById());
   }, [dispatch]);
-
   const filterPassedTime = (time) => {
     const selectedDate = new Date(time);
-    const disabledTimes = records.map(
-      (record) =>
-        record.usluga === item._id &&
-        record.date
-          .slice(0, record.date.length - 8)
-          .replace("T", " ")
-          .replace("Z", "")
-    );
+    const disabledTimes = records.map((record) => {
+      if (record.usluga._id === item._id || record.usluga === item._id) {
+        return record.date.slice(0, record.date.length - 5).replace("T", " ");
+      }
+    });
     return (
       selectedDate.getHours() > 8 &&
       selectedDate.getHours() < 20 &&
       !disabledTimes?.includes(
         selectedDate
           .toISOString()
-          .slice(0, selectedDate.toISOString().length - 8)
+          .slice(0, selectedDate.toISOString().length - 5)
           .replace("T", " ")
           .replace("Z", "")
       )
@@ -68,15 +64,6 @@ const ServicesChoice = ({ item, token }) => {
   };
   const handleRecord = (usluga, user, doctor) => {
     const date = startDate.toISOString();
-    // .toLocaleString("ru", {
-    //   month: "numeric",
-    //   day: "numeric",
-    //   year: "numeric",
-    //   hour: "numeric",
-    //   minute: "numeric",
-    //   timeZone: 'long'
-    // })
-    // .replace(",", "")
     dispatch(recordToSpecialist({ date, usluga, user, doctor }));
     setOpenDatePicker(false);
     setStartDate("");
@@ -126,7 +113,11 @@ const ServicesChoice = ({ item, token }) => {
                 onClick={() =>
                   handleRecord(item._id, loggedUser._id, item.doctor._id)
                 }
-                disabled={!startDate || Number(startDate?.toString()[16]) >= 9}
+                disabled={
+                  !startDate ||
+                  (startDate?.toString()[16] === "0" &&
+                    startDate?.toString()[17] === "0")
+                }
               >
                 Записаться
               </button>
