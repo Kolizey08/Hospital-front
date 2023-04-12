@@ -1,6 +1,6 @@
 .personalArea {
   .personalArea_wrapper {
-    padding: 130px;
+    padding: 100px;
     .personalArea_bText {
       margin-bottom: 30px;
       font-size: 32px;
@@ -75,6 +75,9 @@
             width: 100%;
             border-collapse: collapse;
             tbody {
+              .record_status {
+                cursor: pointer;
+              }
               tr {
                 border-top: 20px solid transparent;
                 margin-bottom: 20px;
@@ -127,6 +130,45 @@
             color: #ffffff;
             cursor: pointer;
           }
+        }
+      }
+    }
+    .cancelModal {
+      position: fixed;
+      top: 40px;
+      right: 40px;
+      z-index: 1;
+      border: 2px solid #38bcea;
+      padding: 30px 0 10px 0;
+      border-radius: 10px;
+      background-color: rgba($color: white, $alpha: 0.7);
+      .cancelModal_text {
+        margin: 0 30px 15px 30px;
+      }
+      .cancelModal_buttonsRow {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-bottom: 20px;
+        .buttonAccept {
+          cursor: pointer;
+        }
+        .buttonCancel {
+          cursor: pointer;
+        }
+      }
+      .cancel_timeLine {
+        height: 5px;
+        width: 0;
+        background-size: 100%;
+        margin: 5px;
+        background-color: #38bcea;
+        border-radius: 5px;
+        animation: loading 3s ease-in-out forwards;
+      }
+      @keyframes loading {
+        to {
+          width: 95%;
         }
       }
     }
