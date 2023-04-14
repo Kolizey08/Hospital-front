@@ -10,7 +10,9 @@ import Record from "./Record";
 const PersonalArea = () => {
   const dispatch = useDispatch();
   const loggedUser = useSelector((state) => state.user.loggedUser);
-  const records = useSelector((state) => state.record.records).filter((record) => record.user === loggedUser._id);
+  const records = useSelector((state) => state.record.records).filter(
+    (record) => record.user === loggedUser?._id
+  );
   const [needSeePassword, setNeedSeePassword] = React.useState(false);
   const [needChangeInfo, setNeedChangeInfo] = React.useState(false);
 
