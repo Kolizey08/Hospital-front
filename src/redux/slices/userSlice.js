@@ -145,7 +145,8 @@ export const userSlice = createSlice({
         state.token = action.payload;
       })
       .addCase(updateUser.fulfilled, (state, action) => {
-        state.loggedUser = action.payload;
+        state.loggedUser = action.payload._doc;
+        state.loggedUser.password = action.payload.password;
         state.users = state.users.map((user) => {
           if (user._id === action.payload._id) {
             user = action.payload;
